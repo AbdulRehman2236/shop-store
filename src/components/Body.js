@@ -6,6 +6,7 @@ import Header from "./Header";
 import HeaderSection from "./HeaderSection";
 import Footer from "./Footer";
 import ProductDetails from "./ProductDetails";
+import Cart from "./Cart";
 
 const appRouter = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/products/:id",
         element: <ProductDetails />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

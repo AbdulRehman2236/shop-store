@@ -1,7 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../utils/slices/cartSlice";
+import { Link } from "react-router-dom";
 
 const ProductDetailsCard = (items) => {
   const { category, description, image, price, rating, title } = items.items;
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addItemToCart(items));
+  };
+
   return (
     <section className="dark:bg-gray-100 dark:text-gray-800">
       <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
@@ -21,15 +30,16 @@ const ProductDetailsCard = (items) => {
               <button
                 type="button"
                 className="mt-4 px-6 py-2 mr-4 font-semibold border rounded hover:bg-black hover:text-white dark:border-gray-800 dark:text-gray-800"
+                onClick={() => handleAddToCart()}
               >
                 Add to Cart
               </button>
-              <button
-                type="button"
+              <Link
+                to="/cart"
                 className="mt-4 px-6 py-2 font-semibold border rounded bg-black text-white hover:text-black hover:bg-white hover:border-gray-900"
               >
                 Go to Cart
-              </button>
+              </Link>
             </div>
           </div>
         </div>
