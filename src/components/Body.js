@@ -5,6 +5,7 @@ import Products from "./Products";
 import Header from "./Header";
 import HeaderSection from "./HeaderSection";
 import Footer from "./Footer";
+import ProductDetails from "./ProductDetails";
 
 const appRouter = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/products",
         element: <Products />,
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDetails />,
       },
     ],
   },

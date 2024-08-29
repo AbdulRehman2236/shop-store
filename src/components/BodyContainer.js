@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import Shimmer from "./Shimmer";
 
 const BodyContainer = () => {
-  return (
-    <div className="flex justify-between">
-      <ProductCard name="Men's Casual" price="$ 109.5" img="81fPKd-2AYL._AC_SL1500_.jpg" />
-      <ProductCard name="Men's Casual" price="$ 109.5" img="71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" />
-      <ProductCard name="Men's Casual" price="$ 109.5" img="81fPKd-2AYL._AC_SL1500_.jpg" />
-      <ProductCard name="Men's Casual" price="$ 109.5" img="81fPKd-2AYL._AC_SL1500_.jpg" />
-      <ProductCard name="Men's Casual" price="$ 109.5" img="81fPKd-2AYL._AC_SL1500_.jpg" />
+  const [latestProducts, setLatestProducts] = useState([]);
+  const getLatestProducts = async () => {
+    const data = await fetch("https://fakestoreapi.com/products?limit=4");
+    const json = await data.json();
+    setLatestProducts(json);
+  };
+
+  useEffect(() => {
+    getLatestProducts();
+  }, []);
+
+  return latestProducts.length === 0 ? (
+    <Shimmer />
+  ) : (
+    <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {latestProducts.map((product) => (
+        <ProductCard
+          key={product.id}
+          id={product.id}
+          name={product.title}
+          price={"$" + product.price}
+          img={product.image}
+        />
+      ))}
     </div>
   );
 };
