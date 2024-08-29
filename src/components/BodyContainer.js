@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProductCard from "./ProductCard";
 import Shimmer from "./Shimmer";
+import useLatestProducts from "../utils/hooks/useLatestProducts";
 
 const BodyContainer = () => {
-  const [latestProducts, setLatestProducts] = useState([]);
-  const getLatestProducts = async () => {
-    const data = await fetch("https://fakestoreapi.com/products?limit=4");
-    const json = await data.json();
-    setLatestProducts(json);
-  };
-
-  useEffect(() => {
-    getLatestProducts();
-  }, []);
+  const latestProducts = useLatestProducts();
 
   return latestProducts.length === 0 ? (
     <Shimmer />

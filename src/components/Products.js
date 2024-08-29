@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProductCard from "./ProductCard";
 import Shimmer from "./Shimmer";
+import useAllProducts from "../utils/hooks/useAllProducts";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
-  const getProducts = async () => {
-    const data = await fetch("https://fakestoreapi.com/products");
-    const json = await data.json();
-    setProducts(json);
-  };
-
-  useEffect(() => {
-    getProducts();
-  }, []);
+  const products = useAllProducts();
 
   return products.length === 0 ? (
     <Shimmer />
