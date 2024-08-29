@@ -1,13 +1,7 @@
-import Header from "./components/Header";
-import HeaderSection from "./components/HeaderSection";
+import Body from "./components/Body";
 
 const App = () => {
-  return (
-    <div>
-      <Header />
-      <HeaderSection />
-    </div>
-  );
+  return <Body />;
 };
 
 export default App;

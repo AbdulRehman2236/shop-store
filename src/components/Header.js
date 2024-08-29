@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -11,23 +12,15 @@ const Header = () => {
         </div>
         <div className="flex gap-x-12">
           <div className="relative">
-            <button
-              type="button"
-              className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
-              aria-expanded="false"
-            >
+            <Link className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" to="/">
               HOME
-            </button>
+            </Link>
           </div>
 
           <div className="relative">
-            <button
-              type="button"
-              className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
-              aria-expanded="false"
-            >
+            <Link className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" to="/products">
               PRODUCTS
-            </button>
+            </Link>
           </div>
 
           <div className="relative">
