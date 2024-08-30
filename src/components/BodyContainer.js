@@ -7,7 +7,7 @@ const BodyContainer = () => {
   const latestProducts = useLatestProducts();
 
   return latestProducts.length === 0 ? (
-    <Shimmer />
+    <Shimmer placeholderCount={5} />
   ) : (
     <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {latestProducts.map((product) => (

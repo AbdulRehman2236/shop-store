@@ -13,7 +13,7 @@ const ProductDetailsCard = (items) => {
   };
 
   return (
-    <section className="dark:bg-gray-100 dark:text-gray-800">
+    <section className="dark:bg-gray-100 h-full min-h-[90vh] flex items-center justify-center  dark:text-gray-800">
       <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
         <div
           rel="noopener noreferrer"

@@ -7,7 +7,7 @@ const Products = () => {
   const products = useAllProducts();
 
   return products.length === 0 ? (
-    <Shimmer />
+    <Shimmer placeholderCount={10} />
   ) : (
     <div className="sm:items-center">
       <h1 className="font-bold text-2xl text-center mt-4 mb-8">LATEST COLLECTIONS</h1>

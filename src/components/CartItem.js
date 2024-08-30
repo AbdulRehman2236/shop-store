@@ -21,7 +21,7 @@ const CartItem = (cart) => {
   return (
     <div className="flex flex-col md:flex-row md:pt-10 md:pb-10 items-center justify-center w-full max-w-3xl mx-auto p-4 border rounded-md shadow-md bg-white">
       <div className="md:ml-10">
-        <img src={image} alt="" className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-lg" />
+        <img src={image} alt={title} className="w-32 h-32 md:w-48 md:h-48 object-contain rounded-lg" />
       </div>
 
       <div className="md:ml-40 mt-4 md:mt-0  flex-1">
