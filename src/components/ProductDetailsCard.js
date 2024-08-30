@@ -18,9 +18,16 @@ const ProductDetailsCard = (items) => {
         <div
           rel="noopener noreferrer"
           href="#"
-          className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50"
+          className=" block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50"
         >
-          <img src={image} alt="" className="object-cover w-full h-72 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500" />
+          <div className="lg:col-span-7 lg:flex lg:items-center lg:justify-center">
+            <img
+              src={image}
+              alt=""
+              className="bg-white object-contain w-full h-72 sm:h-96 rounded lg:col-span-7 lg:col-start-1 lg:row-span-full"
+            />
+          </div>
+
           <div className="p-6 space-y-3 lg:col-span-5">
             <h3 className="text-xl font-bold uppercase">{category}</h3>
             <span className="text-lg font-semibold dark:text-gray-600">{title}</span>

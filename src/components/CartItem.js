@@ -26,10 +26,10 @@ const CartItem = (cart) => {
 
       <div className="md:ml-40 mt-4 md:mt-0  flex-1">
         <h2 className="text-xl font-bold text-gray-800 leading-tight">{title}</h2>
-        <p className="text-lg font-bold text-gray-600 mt-2">
+        <p className="flex justify-center text-lg font-bold text-gray-600 mt-2 md:flex md:justify-start">
           {quantity} x ${price} = ${totalPrice}
         </p>
-        <div className="mt-4 flex items-center space-x-4">
+        <div className="mt-4 flex justify-center items-center space-x-4 md:justify-start">
           <button
             onClick={handleRemoveFromCart}
             className="px-3 text-xl font-bold border rounded hover:bg-black hover:text-white dark:border-gray-800 dark:text-gray-800"

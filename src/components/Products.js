@@ -9,9 +9,9 @@ const Products = () => {
   return products.length === 0 ? (
     <Shimmer />
   ) : (
-    <div>
+    <div className="sm:items-center">
       <h1 className="font-bold text-2xl text-center mt-4 mb-8">LATEST COLLECTIONS</h1>
-      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
         {products.map((product) => (
           <ProductCard
             key={product.id}
