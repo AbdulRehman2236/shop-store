@@ -9,9 +9,9 @@ const Products = () => {
   return products.length === 0 ? (
     <Shimmer placeholderCount={10} />
   ) : (
-    <div className="sm:items-center">
+    <div className="px-16 sm:px-4">
       <h1 className="font-bold text-2xl text-center mt-4 mb-8">LATEST COLLECTIONS</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mx-auto">
         {products.map((product) => (
           <ProductCard
             key={product.id}
