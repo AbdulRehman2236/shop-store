@@ -7,12 +7,12 @@ const Cart = () => {
   const cartItems = useSelector((store) => store.cart.cartItems);
   const totalAmount = useSelector((store) => store.cart.totalAmount);
   return (
-    <div className="flex flex-col justify-center mx-10 p-6 space-y-4 sm:p-10 dark:bg-gray-50 dark:text-gray-800">
-      <h1 className="text-xl text-center font-bold uppercase">Your cart</h1>
+    <div className="flex flex-col justify-center mx-10 p-6 space-y-4 h-full min-h-[100vh] sm:p-10 dark:bg-gray-50 dark:text-gray-800">
       {cartItems.length === 0 ? (
         <h1 className="text-center text-4xl font-semibold">Your cart is empty</h1>
       ) : (
         <div>
+          <h1 className="text-xl text-center font-bold uppercase">Your cart</h1>
           <ul className="flex flex-col divide-y  dark:divide-gray-300">
             {cartItems.map((cartItem) => (
               <li key={cartItem.items.id} className="flex flex-col py-6 justify-center sm:flex-row sm:justify-between">
