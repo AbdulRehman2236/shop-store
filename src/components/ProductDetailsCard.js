@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addItemToCart } from "../utils/slices/cartSlice";
+import { addItemToCart, calculateTotalAmount } from "../utils/slices/cartSlice";
 import { Link } from "react-router-dom";
 
 const ProductDetailsCard = (items) => {
@@ -9,6 +9,7 @@ const ProductDetailsCard = (items) => {
 
   const handleAddToCart = () => {
     dispatch(addItemToCart(items));
+    dispatch(calculateTotalAmount(price));
   };
 
   return (
