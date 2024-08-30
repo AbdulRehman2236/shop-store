@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import useAllProducts from "../utils/hooks/useAllProducts";
 import Sorting from "./Sorting";
 import { useSelector } from "react-redux";
+import Category from "./Category";
 
 const Products = () => {
   const products = useAllProducts();
@@ -16,6 +17,10 @@ const Products = () => {
       <div className="flex justify-between">
         <h1 className="font-bold text-2xl flex items-center mt-4 mb-8">LATEST COLLECTIONS</h1>
         <Sorting />
+      </div>
+
+      <div>
+        <Category />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mx-auto">
