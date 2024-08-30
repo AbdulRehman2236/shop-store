@@ -5,11 +5,13 @@ const ProductCard = ({ id, name, price, img }) => {
   return (
     <div className="m-4 max-w-xs p-4 rounded-md shadow-md bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900">
       <Link to={"/products/" + id}>
-        <img
-          src={img}
-          alt=""
-          className="object-cover object-center w-72 rounded-md h-60 bg-gray-500 dark:bg-gray-500"
-        />
+        <div className="flex justify-center">
+          <img
+            src={img}
+            alt=""
+            className="object-fit object-center w-fit rounded-md h-60 bg-gray-500 dark:bg-gray-500"
+          />
+        </div>
         <div className="mt-6 mb-2">
           <h2 className="block text-center font-bold tracking-widest uppercase text-violet-400 dark:text-violet-600">
             {name.slice(0, 15).concat("...")}
