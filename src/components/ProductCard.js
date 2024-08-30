@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ id, name, price, img }) => {
   return (
-    <div className="m-4 max-w-xs p-4 rounded-md shadow-md bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900">
+    <div className="m-4 max-w-xs p-4 rounded-md shadow-lg bg-gray-900 dark:bg-gray-50 border border-gray-100 text-gray-50 dark:text-gray-900 hover:text-sm ">
       <Link to={"/products/" + id}>
         <div className="flex justify-center">
           <img
             src={img}
             alt=""
-            className="object-fit object-center w-fit rounded-md h-60 bg-gray-500 dark:bg-gray-500"
+            className="object-fit object-center w-fit rounded-md h-60 bg-gray-500 dark:bg-gray-500 transition-transform transform-gpu hover:scale-105 hover:rotate-1 hover:skew-x-1 hover:skew-y-1"
           />
         </div>
         <div className="mt-6 mb-2">
