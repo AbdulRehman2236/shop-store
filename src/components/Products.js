@@ -15,11 +15,13 @@ const Products = () => {
   return products.length === 0 ? (
     <Shimmer placeholderCount={10} />
   ) : (
-    <div className="px-16 sm:px-4">
+    <div className="px-4 sm:px-16">
       {showSearch && <Search />}
-      <div className="flex justify-between">
-        <h1 className="font-bold text-2xl flex items-center mt-4 mb-8">LATEST COLLECTIONS</h1>
-        <Sorting />
+      <div className="relative flex items-center mt-3">
+        <h1 className="font-bold text-2xl mx-auto mt-6 mb-8">LATEST COLLECTIONS</h1>
+        <div className="absolute right-0 mt-6 mb-8">
+          <Sorting />
+        </div>
       </div>
 
       <div>
