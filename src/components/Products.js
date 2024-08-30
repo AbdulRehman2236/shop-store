@@ -5,8 +5,10 @@ import useAllProducts from "../utils/hooks/useAllProducts";
 import Sorting from "./Sorting";
 import { useSelector } from "react-redux";
 import Category from "./Category";
+import Search from "./Search";
 
 const Products = () => {
+  const showSearch = useSelector((store) => store.search.showSearch);
   const products = useAllProducts();
   const filteredProducts = useSelector((store) => store.product.sortedProducts);
 
@@ -14,6 +16,7 @@ const Products = () => {
     <Shimmer placeholderCount={10} />
   ) : (
     <div className="px-16 sm:px-4">
+      {showSearch && <Search />}
       <div className="flex justify-between">
         <h1 className="font-bold text-2xl flex items-center mt-4 mb-8">LATEST COLLECTIONS</h1>
         <Sorting />

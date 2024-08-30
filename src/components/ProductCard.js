@@ -20,7 +20,7 @@ const ProductCard = ({ id, name, price, img }) => {
           <div className="flex justify-center items-center">
             <button
               type="button"
-              className="mt-4 px-6 py-2 font-semibold border rounded dark:border-gray-800 dark:text-gray-800"
+              className="mt-4 px-6 py-2 font-semibold border rounded dark:border-gray-800 dark:text-gray-800 hover:text-white hover:bg-gray-800"
             >
               Buy Now
             </button>
