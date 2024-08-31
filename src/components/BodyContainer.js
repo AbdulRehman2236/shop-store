@@ -10,7 +10,7 @@ const BodyContainer = () => {
     <Shimmer placeholderCount={5} />
   ) : (
     <div className="px-16 sm:px-4">
-      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid  grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {latestProducts.map((product) => (
           <ProductCard
             key={product.id}

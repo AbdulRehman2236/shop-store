@@ -13,7 +13,7 @@ const ProductDetailsCard = (items) => {
   };
 
   return (
-    <section className="dark:bg-gray-100 h-full min-h-[90vh] flex items-center justify-center  dark:text-gray-800">
+    <section className="bg-gray-50 h-full min-h-[90vh] flex items-center justify-center dark:bg-gray-800  dark:text-gray-800">
       <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
         <div
           rel="noopener noreferrer"
@@ -28,23 +28,23 @@ const ProductDetailsCard = (items) => {
             />
           </div>
 
-          <div className="p-6 space-y-3 lg:col-span-5">
+          <div className="p-6 space-y-3 lg:col-span-5 dark:bg-gray-700 dark:text-white">
             <h3 className="text-xl font-bold uppercase">{category}</h3>
-            <span className="text-lg font-semibold dark:text-gray-600">{title}</span>
+            <span className="text-lg font-semibold ">{title}</span>
             <p className="text-sm font-bold ">{rating.rate} ⭐</p>
             <h3 className="text-xl font-bold sm:text-4xl">$ {price}</h3>
             <p className="text-sm">{description}</p>
             <div>
               <button
                 type="button"
-                className="mt-4 px-6 py-2 mr-4 font-semibold border rounded hover:bg-black hover:text-white dark:border-gray-800 dark:text-gray-800"
+                className="mt-4 px-6 py-2 mr-4 font-semibold border rounded hover:bg-black hover:text-white dark:bg-gray-800 dark:border-gray-900 dark:text-white dark:hover:bg-white dark:hover:text-gray-800"
                 onClick={() => handleAddToCart()}
               >
                 Add to Cart
               </button>
               <Link
                 to="/cart"
-                className="mt-4 px-6 py-2 font-semibold border rounded bg-black text-white hover:text-black hover:bg-white hover:border-gray-900"
+                className="mt-4 px-6 py-2 font-semibold border rounded bg-black text-white hover:text-black hover:bg-white hover:border-gray-900 dark:bg-white dark:text-gray-800 dark:hover:text-white dark:hover:bg-gray-800 dark:hover:border border-gray-900"
               >
                 Go to Cart
               </Link>

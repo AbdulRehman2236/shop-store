@@ -3,7 +3,7 @@ import { ABOUT_IMG } from "../utils/constants";
 
 const About = () => {
   return (
-    <section className="dark:bg-gray-100 h-full min-h-[90vh] flex-col items-center justify-center dark:text-gray-800">
+    <section className="h-full min-h-[90vh] flex-col items-center justify-center dark:text-white dark:bg-gray-800">
       <h1 className="font-bold text-center pt-8 text-2xl mb-8 sm:mb-0 sm:mt-0">ABOUT US</h1>
 
       <div className="container max-w-6xl sm:p-6 mx-auto space-y-6 sm:space-y-12">
@@ -12,8 +12,8 @@ const About = () => {
           href="#"
           className="block max-w-sm gap-3 mx-auto sm:max-w-full sm:flex justify-center group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50"
         >
-          <div className="lg:col-span-4 md:col-span-5 sm:w-full sm:mb-4 flex items-center justify-center">
-            <img src={ABOUT_IMG} alt="About Us" className="object-cover w-full h-48 sm:h-60 md:h-72 lg:h-96 rounded" />
+          <div className="lg:col-span-4 md:col-span-5 sm:w-full flex items-center justify-center">
+            <img src={ABOUT_IMG} alt="About Us" className="object-cover w-full h-48 sm:h-60 md:h-full lg:h-full" />
           </div>
 
           <div className="lg:col-span-8 md:col-span-7 p-6 space-y-3">
@@ -26,7 +26,7 @@ const About = () => {
               exceed your expectations.
             </span>
 
-            <h3 className="text-xl font-bold">Our Mission</h3>
+            <h3 className="text-xl font-bold dark:text-gray-900">Our Mission</h3>
             <span className="text-xs font-semibold dark:text-gray-600">
               Our mission is to empower our customers by offering an extensive selection of quality products, excellent
               customer service, and a seamless online shopping experience. We strive to be a leader in the eCommerce
@@ -35,7 +35,7 @@ const About = () => {
               doorstep.
             </span>
 
-            <h3 className="text-xl font-bold">Our Values</h3>
+            <h3 className="text-xl font-bold dark:text-gray-900">Our Values</h3>
             <span className="text-xs font-semibold dark:text-gray-600">
               We’re committed to providing exceptional customer service, ensuring that every shopping experience is
               seamless and satisfying. Our team works tirelessly to source the best products, partner with trusted

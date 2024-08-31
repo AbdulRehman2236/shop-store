@@ -32,13 +32,13 @@ const CartItem = (cart) => {
         <div className="mt-4 flex justify-center items-center space-x-4 md:justify-start">
           <button
             onClick={handleRemoveFromCart}
-            className="px-3 text-xl font-bold border rounded hover:bg-black hover:text-white dark:border-gray-800 dark:text-gray-800"
+            className="px-3 text-xl font-bold border border-black rounded hover:bg-black hover:text-white dark:border-gray-800 dark:text-gray-800 dark:hover:text-white"
           >
             -
           </button>
           <button
             onClick={() => handleAddToCart()}
-            className="px-3 text-xl  font-bold border rounded hover:bg-black hover:text-white dark:border-gray-800 dark:text-gray-800"
+            className="px-3 text-xl  font-bold border border-black rounded hover:bg-black hover:text-white dark:border-gray-800 dark:text-gray-800 dark:hover:text-white"
           >
             +
           </button>
