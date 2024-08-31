@@ -9,6 +9,7 @@ import ProductDetails from "./ProductDetails";
 import Cart from "./Cart";
 import About from "./About";
 import Contact from "./Contact";
+import Error from "./Error";
 
 const appRouter = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const appRouter = createBrowserRouter([
         <Footer />
       </>
     ),
+    errorElement: <Error />,
     children: [
       {
         path: "/",
