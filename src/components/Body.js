@@ -10,12 +10,14 @@ import Cart from "./Cart";
 import About from "./About";
 import Contact from "./Contact";
 import Error from "./Error";
+import OnlineStatus from "./OnlineStatus";
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
+        <OnlineStatus />
         <Header />
         <Outlet />
         <Footer />
