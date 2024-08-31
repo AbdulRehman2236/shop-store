@@ -12,9 +12,7 @@ const Products = () => {
   const products = useAllProducts();
   const filteredProducts = useSelector((store) => store.product.sortedProducts);
 
-  return products.length === 0 ? (
-    <Shimmer placeholderCount={10} />
-  ) : (
+  return (
     <div className="px-16 sm:px-4">
       {showSearch && <Search />}
       <div className="flex flex-col sm:mt-10 sm:flex sm:relative items-center mt-3">
@@ -28,17 +26,21 @@ const Products = () => {
         <Category />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mx-auto">
-        {filteredProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.title}
-            price={"$" + product.price}
-            img={product.image}
-          />
-        ))}
-      </div>
+      {products.length === 0 ? (
+        <Shimmer placeholderCount={10} />
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mx-auto">
+          {filteredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              name={product.title}
+              price={"$" + product.price}
+              img={product.image}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

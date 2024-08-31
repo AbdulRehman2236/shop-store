@@ -1,8 +1,10 @@
 import React from "react";
 import useOnlineStatus from "../utils/hooks/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const OnlineStatus = () => {
-  const onlineStatus = useOnlineStatus();
+  useOnlineStatus();
+  const onlineStatus = useSelector((store) => store.networkStatusSlice.onlineStatus);
   return (
     <>
       {!onlineStatus && (

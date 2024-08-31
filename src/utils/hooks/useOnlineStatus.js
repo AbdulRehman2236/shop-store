@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setOnlineStatus } from "../slices/networkStatusSlice";
 
 const useOnlineStatus = () => {
-  const [onlineStatus, setOnlineStatus] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.addEventListener("online", () => {
-      setOnlineStatus(true);
+      dispatch(setOnlineStatus(true));
     });
 
     window.addEventListener("offline", () => {
-      setOnlineStatus(false);
+      dispatch(setOnlineStatus(false));
     });
   }, []);
-
-  return onlineStatus;
 };
 
 export default useOnlineStatus;
