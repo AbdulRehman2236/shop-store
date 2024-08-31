@@ -2,6 +2,7 @@ import React from "react";
 import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import EmptyCart from "./EmptyCart";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.cartItems);
@@ -9,7 +10,7 @@ const Cart = () => {
   return (
     <div className="flex flex-col justify-center mx-10 p-6 space-y-4 h-full min-h-[100vh] sm:p-10 dark:bg-gray-50 dark:text-gray-800">
       {cartItems.length === 0 ? (
-        <h1 className="text-center text-4xl font-semibold">Your cart is empty</h1>
+        <EmptyCart />
       ) : (
         <div>
           <h1 className="text-xl text-center font-bold uppercase">Your cart</h1>
