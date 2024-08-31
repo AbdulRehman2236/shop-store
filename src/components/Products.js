@@ -16,7 +16,7 @@ const Products = () => {
     <div className="px-16 sm:px-4">
       {showSearch && <Search />}
       <div className="flex flex-col sm:mt-10 sm:flex sm:relative items-center mt-3">
-        <h1 className="font-bold text-2xl mt-6 mb-8 sm:mb-0 sm:mt-0">LATEST COLLECTIONS</h1>
+        <h1 className="font-bold text-2xl mt-6 mb-8 sm:mb-0 sm:mt-0 dark:text-white">LATEST COLLECTIONS</h1>
         <div className="sm:ml-auto mt-2 sm:absolute sm:right-0 sm:mt-0">
           <Sorting />
         </div>
