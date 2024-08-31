@@ -7,10 +7,14 @@ const searchSlice = createSlice({
   },
   reducers: {
     showSearch: (state) => {
-      state.showSearch = !state.showSearch;
+      state.showSearch = true;
+    },
+
+    hideSearch: (state) => {
+      state.showSearch = false;
     },
   },
 });
 
-export const { showSearch } = searchSlice.actions;
+export const { showSearch, hideSearch } = searchSlice.actions;
 export default searchSlice.reducer;
