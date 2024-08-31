@@ -7,6 +7,8 @@ import HeaderSection from "./HeaderSection";
 import Footer from "./Footer";
 import ProductDetails from "./ProductDetails";
 import Cart from "./Cart";
+import About from "./About";
+import Contact from "./Contact";
 
 const appRouter = createBrowserRouter([
   {
@@ -39,6 +41,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },

@@ -88,23 +88,23 @@ const Header = () => {
             </div>
 
             <div className="relative">
-              <button
-                type="button"
+              <Link
+                to="/about"
                 className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 hover:font-bold hover:text-base"
                 aria-expanded="false"
               >
                 ABOUT
-              </button>
+              </Link>
             </div>
 
             <div className="relative">
-              <button
-                type="button"
+              <Link
+                to="/contact"
                 className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 hover:font-bold hover:text-base"
                 aria-expanded="false"
               >
                 CONTACT
-              </button>
+              </Link>
             </div>
           </div>
           <div className="hidden md:flex md:flex-1 md:justify-end">
@@ -178,14 +178,14 @@ const Header = () => {
                     PRODUCTS
                   </Link>
                   <Link
-                    to="/"
+                    to="/about"
                     onClick={handleCloseMenu}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:font-bold hover:text-base"
                   >
                     ABOUT
                   </Link>
                   <Link
-                    to="/"
+                    to="/contact"
                     onClick={handleCloseMenu}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:font-bold hover:text-base"
                   >
