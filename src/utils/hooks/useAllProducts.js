@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProducts, addSortedProducts } from "../slices/productSlice";
+import { GET_PRODUCTS_API } from "../constants";
 
 const useAllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -8,7 +9,7 @@ const useAllProducts = () => {
   const dispatch = useDispatch();
   const getProducts = async () => {
     try {
-      const data = await fetch("https://fakestoreapi.com/products");
+      const data = await fetch(GET_PRODUCTS_API);
       const json = await data.json();
       setProducts(json);
       dispatch(addProducts(json));

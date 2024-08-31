@@ -1,4 +1,5 @@
 import React from "react";
+import { CONTACT_IMG } from "../utils/constants";
 
 const Contact = () => {
   return (
@@ -13,8 +14,8 @@ const Contact = () => {
         >
           <div className="lg:col-span-7 lg:flex lg:items-center lg:justify-center">
             <img
-              src="https://images.unsplash.com/photo-1416339442236-8ceb164046f8?q=80&w=1403&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
+              src={CONTACT_IMG}
+              alt="Contact Us"
               className="bg-white object-cover w-full h-72 sm:h-96 rounded lg:col-span-7 lg:col-start-1 lg:row-span-full"
             />
           </div>

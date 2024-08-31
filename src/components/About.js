@@ -1,4 +1,5 @@
 import React from "react";
+import { ABOUT_IMG } from "../utils/constants";
 
 const About = () => {
   return (
@@ -12,11 +13,7 @@ const About = () => {
           className="block max-w-sm gap-3 mx-auto sm:max-w-full sm:flex justify-center group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50"
         >
           <div className="lg:col-span-4 md:col-span-5 sm:w-full sm:mb-4 flex items-center justify-center">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-              className="object-cover w-full h-48 sm:h-60 md:h-72 lg:h-96 rounded"
-            />
+            <img src={ABOUT_IMG} alt="About Us" className="object-cover w-full h-48 sm:h-60 md:h-72 lg:h-96 rounded" />
           </div>
 
           <div className="lg:col-span-8 md:col-span-7 p-6 space-y-3">

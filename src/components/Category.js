@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addSortedProducts } from "../utils/slices/productSlice";
+import { GET_CATEGORY_API } from "../utils/constants";
 
 const Category = () => {
   const [active, setActive] = useState(0);
@@ -9,7 +10,7 @@ const Category = () => {
   const categories = ["all", "electronics", "jewelery", "men's clothing", "women's clothing"];
   const handleCategory = async (index, category) => {
     if (category !== "all") {
-      const data = await fetch("https://fakestoreapi.com/products/category/" + category);
+      const data = await fetch(GET_CATEGORY_API + category);
       const json = await data.json();
       dispatch(addSortedProducts(json));
     } else dispatch(addSortedProducts(products));

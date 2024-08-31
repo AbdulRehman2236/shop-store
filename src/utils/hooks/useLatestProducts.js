@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { GET_LATEST_PRODUCTS_API } from "../constants";
 
 const useLatestProducts = () => {
   const [latestProducts, setLatestProducts] = useState([]);
@@ -7,7 +8,7 @@ const useLatestProducts = () => {
 
   const getLatestProducts = async () => {
     try {
-      const data = await fetch("https://fakestoreapi.com/products?limit=4");
+      const data = await fetch(GET_LATEST_PRODUCTS_API);
       const json = await data.json();
       setLatestProducts(json);
     } catch (error) {

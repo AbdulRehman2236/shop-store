@@ -3,7 +3,6 @@ import { Link, useRouteError } from "react-router-dom";
 
 const Error = () => {
   const error = useRouteError();
-  console.log("error", error);
 
   return (
     <section className="flex items-center h-full p-16 dark:bg-gray-50 dark:text-gray-800">

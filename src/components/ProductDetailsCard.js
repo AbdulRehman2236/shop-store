@@ -23,7 +23,7 @@ const ProductDetailsCard = (items) => {
           <div className="lg:col-span-7 lg:flex lg:items-center lg:justify-center">
             <img
               src={image}
-              alt=""
+              alt={title}
               className="bg-white object-contain w-full h-72 sm:h-96 rounded lg:col-span-7 lg:col-start-1 lg:row-span-full"
             />
           </div>

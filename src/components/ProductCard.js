@@ -8,7 +8,7 @@ const ProductCard = ({ id, name, price, img }) => {
         <div className="flex justify-center">
           <img
             src={img}
-            alt=""
+            alt={name}
             className="object-fit object-center w-fit rounded-md h-60 bg-gray-500 dark:bg-gray-500 transition-transform transform-gpu hover:scale-105 hover:rotate-1 hover:skew-x-1 hover:skew-y-1"
           />
         </div>
