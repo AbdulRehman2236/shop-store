@@ -23,9 +23,14 @@ const Search = () => {
     }
   };
 
+  const handleSearchCross = () => {
+    setSearchText("");
+    dispatch(addSortedProducts(products));
+  };
+
   return (
-    <div className="flex justify-center border-t border-b bg-gray-50 text-center sm:mx-10 mb-10">
-      <div className="inline-flex items-center justify-center border border-gray-400 px-5 py-2 my-5 mx-3 rounded-2xl w-3/4 sm:w-1/2">
+    <div className="flex justify-center bg-gray-50 text-center sm:mx-10 mb-10 dark:bg-gray-900 dark:text-white">
+      <div className="inline-flex items-center justify-center border border-gray-400 px-5 py-2 my-5 mx-3 rounded-2xl w-3/4 sm:w-1/2 ">
         <input
           className="flex-1 outline-none bg-inherit text-sm"
           type="text"
@@ -34,16 +39,15 @@ const Search = () => {
           onChange={handleSearch}
         />
         <svg
-          className=" size-4 font-semibold leading-6 text-gray-900 mx-1 mr-6"
           xmlns="http://www.w3.org/2000/svg"
+          fill="none"
           viewBox="0 0 24 24"
-          fill="currentColor"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="size-4"
+          onClick={handleSearchCross}
         >
-          <path
-            fillRule="evenodd"
-            d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-            clipRule="evenodd"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
         </svg>
       </div>
       <div className="flex items-center">

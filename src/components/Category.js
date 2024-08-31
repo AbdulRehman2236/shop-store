@@ -24,8 +24,8 @@ const Category = () => {
           type="button"
           onClick={() => handleCategory(index, category)}
           className={`text-sm mt-4 mr-4 px-3 py-1 font-bold uppercase border rounded border-gray-900 text-gray-700 hover:text-white hover:bg-gray-600 hover:font-bold hover:text-xs ${
-            active == index ? "bg-gray-800 text-white border border-black" : ""
-          }`}
+            active == index ? "bg-gray-800 text-white border border-black dark:bg-gray-700" : ""
+          } dark:text-white dark:bg-gray-500`}
           key={index}
         >
           {category}
