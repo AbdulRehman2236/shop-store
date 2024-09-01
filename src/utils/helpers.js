@@ -6,3 +6,7 @@ export const sortProductByPrice = (products, sortType) => {
   else if (sortType === SORTING_TYPES[2].identifier) return productForSort.sort((a, b) => b.price - a.price);
   else return null;
 };
+
+export const generateShippingFee = () => {
+  return Math.ceil(Math.random() * 10) + 0.5;
+};

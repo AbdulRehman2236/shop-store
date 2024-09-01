@@ -1,8 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { generateShippingFee } from "../utils/helpers";
 
 const PlaceOrder = () => {
+  const subTotal = useSelector((store) => store.cart.totalAmount);
+  const shippingFee = generateShippingFee();
   const navigate = useNavigate();
   const {
     register,
@@ -135,17 +139,17 @@ const PlaceOrder = () => {
             <div className="space-y-2 text-sm">
               <div className="flex justify-between dark:text-white">
                 <span>Subtotal</span>
-                <span>$84.00</span>
+                <span>${subTotal}</span>
               </div>
               <hr />
               <div className="flex justify-between dark:text-white">
                 <span>Shipping Fee</span>
-                <span>$10.00</span>
+                <span>${shippingFee}</span>
               </div>
               <hr />
               <div className="flex justify-between font-bold space-y-1 dark:text-white">
                 <span>Total</span>
-                <span>$94.00</span>
+                <span>${subTotal + shippingFee}</span>
               </div>
             </div>
           </div>
