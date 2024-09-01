@@ -8,7 +8,7 @@ const Cart = () => {
   const cartItems = useSelector((store) => store.cart.cartItems);
   const totalAmount = useSelector((store) => store.cart.totalAmount);
   return (
-    <div className="flex flex-col justify-center mx-10 p-6 space-y-4 h-full min-h-[100vh] sm:p-10 bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-50">
+    <div className="flex flex-col justify-center mx-10 p-6 space-y-4 h-full min-h-[100vh] sm:p-10 bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-gray-50">
       {cartItems.length === 0 ? (
         <EmptyCart />
       ) : (

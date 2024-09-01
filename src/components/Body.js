@@ -65,7 +65,7 @@ const appRouter = createBrowserRouter([
 
 const Body = () => {
   return (
-    <div className="h-full min-h-[100vh] dark:bg-gray-900">
+    <div className="h-full min-h-[100vh] dark:bg-gray-800">
       <RouterProvider router={appRouter} />
     </div>
   );

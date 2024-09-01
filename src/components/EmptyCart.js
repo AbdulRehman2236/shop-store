@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const EmptyCart = () => {
   return (
-    <section className="flex items-center h-full sm:p-16 dark:bg-gray-900 dark:text-gray-50">
+    <section className="flex items-center h-full sm:p-16 dark:bg-gray-800 dark:text-gray-50">
       <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8 space-y-8 text-center sm:max-w-md">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-40 h-40 ">
           <path
