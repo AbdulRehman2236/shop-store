@@ -1,8 +1,26 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const PlaceOrder = () => {
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    /** simulating api call to server */
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    navigate("/order-complete");
+    reset();
+  };
+
   return (
-    <form className="container mx-auto px-8 sm:px-4 py-8 dark:bg-gray-800">
+    <form onSubmit={handleSubmit(onSubmit)} className="container mx-auto px-8 sm:px-4 py-8 dark:bg-gray-800">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Delivery Information Form */}
         <div className="lg:mt-4 lg:px-4 lg:mr-10">
@@ -11,51 +29,100 @@ const PlaceOrder = () => {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {errors.firstName && <p className="text-red-500">{errors.firstName.message}</p>}
             <input
               type="text"
               placeholder="First name"
               className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+              {...register("firstName", {
+                required: "First name is required",
+                maxLength: { value: 20, message: "First name should not be greater than 20 characters" },
+              })}
             />
+
             <input
               type="text"
               placeholder="Last name"
               className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+              {...register("lastName", {
+                required: "Last name is required",
+                minLength: { value: 3, message: "Last name must be at least 3 characters" },
+                maxLength: { value: 20, message: "Last name should not be greater than 20 characters" },
+              })}
             />
+            {errors.lastName && <p className="text-red-500">{errors.lastName.message}</p>}
             <input
               type="email"
               placeholder="Email address"
               className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+              {...register("email", { required: "Email is required" })}
             />
+            {errors.email && <p className="text-red-500">{errors.email.message}</p>}
             <input
               type="text"
               placeholder="Street"
               className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+              {...register("street", {
+                required: "Street is required",
+                maxLength: {
+                  value: 50,
+                  message: "Street should not be greater than 50 characters",
+                },
+              })}
             />
+            {errors.street && <p className="text-red-500">{errors.street.message}</p>}
             <input
               type="text"
               placeholder="City"
               className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+              {...register("city", {
+                required: "City is required",
+                maxLength: { value: 20, message: "City should not be greater than 20 characters" },
+              })}
             />
+            {errors.city && <p className="text-red-500">{errors.city.message}</p>}
             <input
               type="text"
               placeholder="State"
               className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+              {...register("state", {
+                required: "State is required",
+                maxLength: { value: 20, message: "State should not be greater than 20 characters" },
+              })}
             />
+            {errors.state && <p className="text-red-500">{errors.state.message}</p>}
             <input
-              type="text"
-              placeholder="Zipcode"
+              type="number"
+              placeholder="Zip Code"
               className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+              {...register("zipCode", {
+                required: "Zip Code is required",
+                maxLength: { value: 20, message: "Zip Code should not be greater than 20 characters" },
+              })}
             />
+            {errors.zipCode && <p className="text-red-500">{errors.zipCode.message}</p>}
             <input
               type="text"
               placeholder="Country"
               className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+              {...register("country", {
+                required: "Country is required",
+                maxLength: { value: 20, message: "Country should not be greater than 20 characters" },
+                validate: (value) => value !== getValues("city") || "City and Country are same",
+              })}
             />
+            {errors.country && <p className="text-red-500">{errors.country.message}</p>}
             <input
-              type="text"
+              type="number"
               placeholder="Phone"
               className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+              {...register("phone", {
+                required: "Phone is required",
+                minLength: { value: 9, message: "Phone must be at least 9 characters" },
+                maxLength: { value: 15, message: "Phone should not be greater than 15 characters" },
+              })}
             />
+            {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
           </div>
         </div>
 
@@ -143,8 +210,9 @@ const PlaceOrder = () => {
 
           <div className="flex justify-end">
             <button
+              disabled={isSubmitting}
               type="submit"
-              className="w-3/12 bg-black text-sm text-white py-2 rounded-md hover:bg-white hover:text-black hover:border hover:border-black hover:font-bold dark:text-white dark:bg-gray-600 dark:hover:bg-gray-300 dark:hover:text-gray-900"
+              className="w-3/12 bg-black text-sm disabled:bg-gray-400 disabled:text-black disabled:font-bold text-white py-2 rounded-md  hover:border hover:border-black hover:font-bold dark:text-white dark:bg-gray-600 dark:hover:bg-gray-300 dark:hover:text-gray-900"
             >
               PLACE ORDER
             </button>

@@ -12,6 +12,7 @@ import Contact from "./Contact";
 import Error from "./Error";
 import OnlineStatus from "./OnlineStatus";
 import PlaceOrder from "./PlaceOrder";
+import OrderComplete from "./OrderComplete";
 
 const appRouter = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/place-order",
         element: <PlaceOrder />,
+      },
+      {
+        path: "/order-complete",
+        element: <OrderComplete />,
       },
       {
         path: "/about",
