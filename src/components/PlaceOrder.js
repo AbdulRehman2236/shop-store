@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { generateShippingFee } from "../utils/helpers";
+import InputError from "./InputError";
 
 const PlaceOrder = () => {
   const subTotal = useSelector((store) => store.cart.totalAmount);
@@ -33,100 +34,125 @@ const PlaceOrder = () => {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {errors.firstName && <p className="text-red-500">{errors.firstName.message}</p>}
-            <input
-              type="text"
-              placeholder="First name"
-              className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-              {...register("firstName", {
-                required: "First name is required",
-                maxLength: { value: 20, message: "First name should not be greater than 20 characters" },
-              })}
-            />
+            <div className="col-span-1">
+              <InputError fieldName={errors.firstName} errorMessage={errors.firstName.message} />
+              <input
+                type="text"
+                placeholder="First name"
+                className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+                {...register("firstName", {
+                  required: "First name is required",
+                  maxLength: { value: 20, message: "First name should not be greater than 20 characters" },
+                })}
+              />
+            </div>
 
-            <input
-              type="text"
-              placeholder="Last name"
-              className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-              {...register("lastName", {
-                required: "Last name is required",
-                minLength: { value: 3, message: "Last name must be at least 3 characters" },
-                maxLength: { value: 20, message: "Last name should not be greater than 20 characters" },
-              })}
-            />
-            {errors.lastName && <p className="text-red-500">{errors.lastName.message}</p>}
-            <input
-              type="email"
-              placeholder="Email address"
-              className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-              {...register("email", { required: "Email is required" })}
-            />
-            {errors.email && <p className="text-red-500">{errors.email.message}</p>}
-            <input
-              type="text"
-              placeholder="Street"
-              className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-              {...register("street", {
-                required: "Street is required",
-                maxLength: {
-                  value: 50,
-                  message: "Street should not be greater than 50 characters",
-                },
-              })}
-            />
-            {errors.street && <p className="text-red-500">{errors.street.message}</p>}
-            <input
-              type="text"
-              placeholder="City"
-              className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-              {...register("city", {
-                required: "City is required",
-                maxLength: { value: 20, message: "City should not be greater than 20 characters" },
-              })}
-            />
-            {errors.city && <p className="text-red-500">{errors.city.message}</p>}
-            <input
-              type="text"
-              placeholder="State"
-              className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-              {...register("state", {
-                required: "State is required",
-                maxLength: { value: 20, message: "State should not be greater than 20 characters" },
-              })}
-            />
-            {errors.state && <p className="text-red-500">{errors.state.message}</p>}
-            <input
-              type="number"
-              placeholder="Zip Code"
-              className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-              {...register("zipCode", {
-                required: "Zip Code is required",
-                maxLength: { value: 20, message: "Zip Code should not be greater than 20 characters" },
-              })}
-            />
-            {errors.zipCode && <p className="text-red-500">{errors.zipCode.message}</p>}
-            <input
-              type="text"
-              placeholder="Country"
-              className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-              {...register("country", {
-                required: "Country is required",
-                maxLength: { value: 20, message: "Country should not be greater than 20 characters" },
-                validate: (value) => value !== getValues("city") || "City and Country are same",
-              })}
-            />
-            {errors.country && <p className="text-red-500">{errors.country.message}</p>}
-            <input
-              type="number"
-              placeholder="Phone"
-              className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-              {...register("phone", {
-                required: "Phone is required",
-                minLength: { value: 9, message: "Phone must be at least 9 characters" },
-                maxLength: { value: 15, message: "Phone should not be greater than 15 characters" },
-              })}
-            />
-            {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
+            <div className="col-span-1">
+              <InputError fieldName={errors.lastName} errorMessage={errors.lastName.message} />
+              <input
+                type="text"
+                placeholder="Last name"
+                className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+                {...register("lastName", {
+                  required: "Last name is required",
+                  minLength: { value: 3, message: "Last name must be at least 3 characters" },
+                  maxLength: { value: 20, message: "Last name should not be greater than 20 characters" },
+                })}
+              />
+            </div>
+
+            <div className="col-span-2">
+              <InputError fieldName={errors.email} errorMessage={errors.email.message} />
+              <input
+                type="email"
+                placeholder="Email address"
+                className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+                {...register("email", { required: "Email is required" })}
+              />
+            </div>
+
+            <div className="col-span-2">
+              <InputError fieldName={errors.street} errorMessage={errors.street.message} />
+              <input
+                type="text"
+                placeholder="Street"
+                className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+                {...register("street", {
+                  required: "Street is required",
+                  maxLength: {
+                    value: 50,
+                    message: "Street should not be greater than 50 characters",
+                  },
+                })}
+              />
+            </div>
+
+            <div className="col-span-1">
+              <InputError fieldName={errors.city} errorMessage={errors.city.message} />
+              <input
+                type="text"
+                placeholder="City"
+                className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+                {...register("city", {
+                  required: "City is required",
+                  maxLength: { value: 20, message: "City should not be greater than 20 characters" },
+                })}
+              />
+            </div>
+
+            <div className="col-span-1">
+              <InputError fieldName={errors.state} errorMessage={errors.state.message} />
+              <input
+                type="text"
+                placeholder="State"
+                className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+                {...register("state", {
+                  required: "State is required",
+                  maxLength: { value: 20, message: "State should not be greater than 20 characters" },
+                })}
+              />
+            </div>
+
+            <div className="col-span-1">
+              <InputError fieldName={errors.zipCode} errorMessage={errors.zipCode.message} />
+              <input
+                type="number"
+                placeholder="Zip Code"
+                className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+                {...register("zipCode", {
+                  required: "Zip Code is required",
+                  maxLength: { value: 20, message: "Zip Code should not be greater than 20 characters" },
+                })}
+              />
+            </div>
+
+            <div className="col-span-1">
+              <InputError fieldName={errors.country} errorMessage={errors.country.message} />
+              <input
+                type="text"
+                placeholder="Country"
+                className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+                {...register("country", {
+                  required: "Country is required",
+                  maxLength: { value: 20, message: "Country should not be greater than 20 characters" },
+                  validate: (value) => value !== getValues("city") || "City and Country are same",
+                })}
+              />
+            </div>
+
+            <div className="col-span-2">
+              <InputError fieldName={errors.phone} errorMessage={errors.phone.message} />
+              <input
+                type="number"
+                placeholder="Phone"
+                className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
+                {...register("phone", {
+                  required: "Phone is required",
+                  minLength: { value: 9, message: "Phone must be at least 9 characters" },
+                  maxLength: { value: 15, message: "Phone should not be greater than 15 characters" },
+                })}
+              />
+            </div>
           </div>
         </div>
 
