@@ -37,12 +37,12 @@ const Cart = () => {
               Back
               <span className="sr-only sm:not-sr-only"> to shop</span>
             </Link>
-            <button
-              type="button"
+            <Link
+              to="/place-order"
               className="px-6 py-2 font-semibold border rounded-md bg-black text-white hover:bg-gray-50 hover:border border-black hover:text-black hover:font-bold dark:bg-white dark:text-gray-900 dark:border-black dark:hover:bg-gray-500 dark:hover:text-white"
             >
-              <span className="sr-only sm:not-sr-only">Continue to </span>Checkout
-            </button>
+              <span className="sr-only sm:not-sr-only">Proceed to </span>Checkout
+            </Link>
           </div>
         </div>
       )}

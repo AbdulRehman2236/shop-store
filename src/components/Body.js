@@ -11,6 +11,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Error from "./Error";
 import OnlineStatus from "./OnlineStatus";
+import PlaceOrder from "./PlaceOrder";
 
 const appRouter = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/place-order",
+        element: <PlaceOrder />,
       },
       {
         path: "/about",
