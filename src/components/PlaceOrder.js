@@ -35,7 +35,7 @@ const PlaceOrder = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="col-span-1">
-              <InputError fieldName={errors.firstName} errorMessage={errors.firstName.message} />
+              {errors && <InputError fieldName={errors.firstName} errorMessage={errors?.firstName?.message} />}
               <input
                 type="text"
                 placeholder="First name"
@@ -48,7 +48,7 @@ const PlaceOrder = () => {
             </div>
 
             <div className="col-span-1">
-              <InputError fieldName={errors.lastName} errorMessage={errors.lastName.message} />
+              {errors && <InputError fieldName={errors.lastName} errorMessage={errors?.lastName?.message} />}
               <input
                 type="text"
                 placeholder="Last name"
@@ -62,7 +62,7 @@ const PlaceOrder = () => {
             </div>
 
             <div className="col-span-2">
-              <InputError fieldName={errors.email} errorMessage={errors.email.message} />
+              {errors && <InputError fieldName={errors.email} errorMessage={errors?.email?.message} />}
               <input
                 type="email"
                 placeholder="Email address"
@@ -72,7 +72,7 @@ const PlaceOrder = () => {
             </div>
 
             <div className="col-span-2">
-              <InputError fieldName={errors.street} errorMessage={errors.street.message} />
+              {errors && <InputError fieldName={errors.street} errorMessage={errors?.street?.message} />}
               <input
                 type="text"
                 placeholder="Street"
@@ -88,7 +88,7 @@ const PlaceOrder = () => {
             </div>
 
             <div className="col-span-1">
-              <InputError fieldName={errors.city} errorMessage={errors.city.message} />
+              {errors && <InputError fieldName={errors.city} errorMessage={errors?.city?.message} />}
               <input
                 type="text"
                 placeholder="City"
@@ -101,7 +101,7 @@ const PlaceOrder = () => {
             </div>
 
             <div className="col-span-1">
-              <InputError fieldName={errors.state} errorMessage={errors.state.message} />
+              {errors && <InputError fieldName={errors.state} errorMessage={errors?.state?.message} />}
               <input
                 type="text"
                 placeholder="State"
@@ -114,7 +114,7 @@ const PlaceOrder = () => {
             </div>
 
             <div className="col-span-1">
-              <InputError fieldName={errors.zipCode} errorMessage={errors.zipCode.message} />
+              {errors && <InputError fieldName={errors.zipCode} errorMessage={errors?.zipCode?.message} />}
               <input
                 type="number"
                 placeholder="Zip Code"
@@ -127,7 +127,7 @@ const PlaceOrder = () => {
             </div>
 
             <div className="col-span-1">
-              <InputError fieldName={errors.country} errorMessage={errors.country.message} />
+              {errors && <InputError fieldName={errors.country} errorMessage={errors?.country?.message} />}
               <input
                 type="text"
                 placeholder="Country"
@@ -141,7 +141,7 @@ const PlaceOrder = () => {
             </div>
 
             <div className="col-span-2">
-              <InputError fieldName={errors.phone} errorMessage={errors.phone.message} />
+              {errors && <InputError fieldName={errors.phone} errorMessage={errors?.phone?.message} />}
               <input
                 type="number"
                 placeholder="Phone"
@@ -242,8 +242,11 @@ const PlaceOrder = () => {
             <button
               disabled={isSubmitting}
               type="submit"
-              className="w-3/12 bg-black text-sm disabled:bg-gray-400 disabled:text-black disabled:font-bold text-white py-2 rounded-md  hover:border hover:border-black hover:font-bold dark:text-white dark:bg-gray-600 dark:hover:bg-gray-300 dark:hover:text-gray-900"
+              className="w-3/12 bg-black text-sm disabled:bg-gray-400 disabled:text-black disabled:font-bold text-white py-2 rounded-md  hover:border hover:border-black hover:font-bold dark:text-white dark:bg-gray-600  flex items-center justify-center"
             >
+              {isSubmitting && (
+                <div className="w-4 h-4 border-4 border-dotted rounded-full animate-spin mr-2 border-gray-700 dark:border-gray-200"></div>
+              )}
               PLACE ORDER
             </button>
           </div>
