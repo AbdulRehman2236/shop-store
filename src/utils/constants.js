@@ -7,6 +7,11 @@ export const ABOUT_IMG =
 export const CONTACT_IMG =
   "https://images.unsplash.com/photo-1416339442236-8ceb164046f8?q=80&w=1403&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
+export const STRIPE_IMG =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGZVxQZ2UYa4aZMO1u_hgQPt-OVvqLq5MnoA&s";
+
+export const RAZORPAY_IMG = "https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg";
+
 export const GET_PRODUCTS_API = "https://fakestoreapi.com/products";
 export const GET_PRODUCT_API = "https://fakestoreapi.com/products/";
 export const GET_CATEGORY_API = "https://fakestoreapi.com/products/category/";
