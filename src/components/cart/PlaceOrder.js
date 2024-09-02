@@ -2,10 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { generateShippingFee } from "../utils/helpers";
+import { generateShippingFee } from "../../utils/helpers";
 import InputError from "./InputError";
 import toast, { Toaster } from "react-hot-toast";
-import { emptyCart, setOrderPlaced } from "../utils/slices/cartSlice";
+import { emptyCart, setOrderPlaced } from "../../utils/slices/cartSlice";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 

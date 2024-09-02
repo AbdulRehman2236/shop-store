@@ -1,8 +1,8 @@
 import React from "react";
-import { sortProductByPrice } from "../utils/helpers";
+import { sortProductByPrice } from "../../utils/helpers";
 import { useDispatch, useSelector } from "react-redux";
-import { addSortedProducts } from "../utils/slices/productSlice";
-import { SORTING_TYPES } from "../utils/constants";
+import { addSortedProducts } from "../../utils/slices/productSlice";
+import { SORTING_TYPES } from "../../utils/constants";
 
 const Sorting = () => {
   const products = useSelector((store) => store.product.products);

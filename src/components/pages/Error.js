@@ -19,7 +19,7 @@ const Error = () => {
           <Link
             rel="noopener noreferrer"
             to="/"
-            className="px-8 py-3 font-semibold rounded text-white bg-gray-700 hover:bg-white border border-black hover:text-black hover:border border-black hover:text-sm hover:font-bold"
+            className="px-8 py-3 font-semibold rounded text-white bg-gray-700 hover:bg-white border hover:text-black hover:border border-black hover:text-sm hover:font-bold"
           >
             Back to Home
           </Link>

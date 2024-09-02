@@ -1,5 +1,5 @@
 import React from "react";
-import CartItem from "./CartItem";
+import CartItem from "../cart/CartItem";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import EmptyCart from "./EmptyCart";

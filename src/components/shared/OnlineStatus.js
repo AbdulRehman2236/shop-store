@@ -1,5 +1,5 @@
 import React from "react";
-import useOnlineStatus from "../utils/hooks/useOnlineStatus";
+import useOnlineStatus from "../../utils/hooks/useOnlineStatus";
 import { useSelector } from "react-redux";
 
 const OnlineStatus = () => {

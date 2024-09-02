@@ -1,5 +1,5 @@
 import React from "react";
-import { CONTACT_IMG } from "../utils/constants";
+import { CONTACT_IMG } from "../../utils/constants";
 
 const Contact = () => {
   return (

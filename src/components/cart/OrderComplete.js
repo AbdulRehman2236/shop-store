@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
-import { resetOrderPlace } from "../utils/slices/cartSlice";
+import { resetOrderPlace } from "../../utils/slices/cartSlice";
 
 const OrderComplete = () => {
   const dispatch = useDispatch();

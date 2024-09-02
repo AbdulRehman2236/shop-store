@@ -1,5 +1,5 @@
 import React from "react";
-import { ABOUT_IMG } from "../utils/constants";
+import { ABOUT_IMG } from "../../utils/constants";
 
 const About = () => {
   return (

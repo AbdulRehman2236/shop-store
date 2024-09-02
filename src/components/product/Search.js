@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addSortedProducts } from "../utils/slices/productSlice";
-import { hideSearch } from "../utils/slices/searchSlice";
+import { addSortedProducts } from "../../utils/slices/productSlice";
+import { hideSearch } from "../../utils/slices/searchSlice";
 
 const Search = () => {
   const products = useSelector((store) => store.product.products);

@@ -1,11 +1,11 @@
 import React from "react";
-import ProductCard from "./ProductCard";
-import Shimmer from "./Shimmer";
-import useAllProducts from "../utils/hooks/useAllProducts";
+import Shimmer from "../shared/Shimmer";
+import useAllProducts from "../../utils/hooks/useAllProducts";
 import Sorting from "./Sorting";
 import { useSelector } from "react-redux";
 import Category from "./Category";
 import Search from "./Search";
+import ProductCard from "./ProductCard";
 
 const Products = () => {
   const showSearch = useSelector((store) => store.search.showSearch);

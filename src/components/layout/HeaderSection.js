@@ -1,5 +1,5 @@
 import React from "react";
-import { HEADER_SECTION_IMG } from "../utils/constants";
+import { HEADER_SECTION_IMG } from "../../utils/constants";
 
 const HeaderSection = () => {
   return (

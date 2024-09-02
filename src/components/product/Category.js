@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addSortedProducts } from "../utils/slices/productSlice";
-import { GET_CATEGORY_API } from "../utils/constants";
+import { addSortedProducts } from "../../utils/slices/productSlice";
+import { GET_CATEGORY_API } from "../../utils/constants";
 
 const Category = () => {
   const [active, setActive] = useState(0);
