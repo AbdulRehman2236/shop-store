@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <footer className="py-6 bg-gray-800 text-gray-50">
       <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
         <div className="grid grid-cols-12">
           <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
-            <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 md:justify-start">
+            <Link to="/" className="flex justify-center space-x-3 md:justify-start">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-900">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
                   <path d="M5.223 2.25c-.497 0-.974.198-1.325.55l-1.3 1.298A3.75 3.75 0 0 0 7.5 9.75c.627.47 1.406.75 2.25.75.844 0 1.624-.28 2.25-.75.626.47 1.406.75 2.25.75.844 0 1.623-.28 2.25-.75a3.75 3.75 0 0 0 4.902-5.652l-1.3-1.299a1.875 1.875 0 0 0-1.325-.549H5.223Z" />
@@ -16,25 +18,25 @@ export const Footer = () => {
                 </svg>
               </div>
               <span className="self-center text-2xl font-semibold">SHOP STORE</span>
-            </a>
+            </Link>
           </div>
           <div className="col-span-6 text-center md:text-left md:col-span-3">
             <p className="pb-1 text-md font-medium">COMPANY</p>
             <ul>
               <li>
-                <a rel="noopener noreferrer" href="#" className="hover:text-violet-400">
+                <Link to="/" className="hover:text-violet-400">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a rel="noopener noreferrer" href="#" className="hover:text-violet-400">
-                  About Us
-                </a>
+                <Link to="/about" className="hover:text-violet-400">
+                  About
+                </Link>
               </li>
               <li>
-                <a rel="noopener noreferrer" href="#" className="hover:text-violet-400">
-                  Delivery
-                </a>
+                <Link to="/contact" className="hover:text-violet-400">
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>

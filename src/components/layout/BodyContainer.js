@@ -1,7 +1,7 @@
 import React from "react";
 import Shimmer from "../shared/Shimmer";
-import useLatestProducts from "../../utils/hooks/useLatestProducts";
 import ProductCard from "../product/ProductCard";
+import useLatestProducts from "../../utils/hooks/useLatestProducts";
 
 const BodyContainer = () => {
   const latestProducts = useLatestProducts();

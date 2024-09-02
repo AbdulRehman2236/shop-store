@@ -1,18 +1,18 @@
 import React from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Products from "../product/Products";
 import Header from "./Header";
-import HeaderSection from "./HeaderSection";
 import Footer from "./Footer";
-import ProductDetails from "../product/ProductDetails";
+import Cart from "../cart/Cart";
+import Error from "../pages/Error";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
-import Error from "../pages/Error";
-import OnlineStatus from "../shared/OnlineStatus";
-import PlaceOrder from "../order/PlaceOrder";
-import OrderComplete from "../order/OrderComplete";
-import Cart from "../cart/Cart";
+import Products from "../product/Products";
+import HeaderSection from "./HeaderSection";
 import BodyContainer from "./BodyContainer";
+import PlaceOrder from "../order/PlaceOrder";
+import ProductDetails from "../product/ProductDetails";
+import OnlineStatus from "../shared/OnlineStatus";
+import OrderComplete from "../order/OrderComplete";
 
 const appRouter = createBrowserRouter([
   {

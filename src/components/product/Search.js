@@ -29,7 +29,7 @@ const Search = () => {
   };
 
   return (
-    <div className="flex justify-center bg-gray-50 text-center sm:mx-10 mb-10 dark:bg-gray-900 dark:text-white">
+    <div className="flex justify-center bg-gray-50 text-center sm:mx-10 mb-10 dark:bg-gray-800 dark:text-white">
       <div className="inline-flex items-center justify-center border border-gray-400 px-5 py-2 my-5 mx-3 rounded-2xl w-3/4 sm:w-1/2 ">
         <input
           className="flex-1 outline-none bg-inherit text-sm"

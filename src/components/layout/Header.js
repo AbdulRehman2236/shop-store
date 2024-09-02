@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { showSearch } from "../../utils/slices/searchSlice";
+import { MobileNavLink, NavLink } from "./NavLinks";
 
 const Header = () => {
   const [dark, setDark] = useState(false);
@@ -27,9 +28,9 @@ const Header = () => {
       {isMenuClose ? (
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 md:px-2  lg:px-8" aria-label="Global">
           <div className="flex md:flex-1">
-            <a href="/" className="-m-1.5 p-1.5">
+            <Link to="/" className="-m-1.5 p-1.5">
               <h1 className="h8 w-auto font-bold text-xl hover:font-bold hover:text-2xl">COLLECTION</h1>
-            </a>
+            </Link>
           </div>
           <div className="flex md:hidden">
             <div className="flex flex-1 justify-end">
@@ -76,39 +77,12 @@ const Header = () => {
               </svg>
             </button>
           </div>
+
           <div className="hidden md:flex md:gap-x-10 lg:flex lg:gap-x-12">
-            <div className="relative">
-              <Link
-                className="flex items-center gap-x-1 text-sm font-semibold uppercase leading-6 text-gray-900 hover:font-bold hover:text-base dark:text-white"
-                to="/"
-              >
-                home
-              </Link>
-            </div>
-            <div className="relative">
-              <Link
-                className="flex items-center gap-x-1 text-sm font-semibold uppercase leading-6 text-gray-900 hover:font-bold hover:text-base dark:text-white"
-                to="/products"
-              >
-                products
-              </Link>
-            </div>
-            <div className="relative">
-              <Link
-                className="flex items-center gap-x-1 text-sm font-semibold uppercase leading-6 text-gray-900 hover:font-bold hover:text-base dark:text-white"
-                to="/about"
-              >
-                about
-              </Link>
-            </div>
-            <div className="relative">
-              <Link
-                className="flex items-center gap-x-1 text-sm font-semibold uppercase leading-6 text-gray-900 hover:font-bold hover:text-base dark:text-white"
-                to="/contact"
-              >
-                contact
-              </Link>
-            </div>
+            <NavLink name="home" />
+            <NavLink name="products" />
+            <NavLink name="about" />
+            <NavLink name="contact" />
           </div>
 
           <div className="hidden md:flex md:flex-1 md:justify-end">
@@ -127,6 +101,7 @@ const Header = () => {
                 />
               </svg>
             </Link>
+
             {dark ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -239,43 +214,13 @@ const Header = () => {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  <Link
-                    to="/"
-                    onClick={handleCloseMenu}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:font-bold hover:text-base dark:text-white dark:hover:bg-gray-800"
-                  >
-                    HOME
-                  </Link>
-                  <Link
-                    to="/products"
-                    onClick={handleCloseMenu}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:font-bold hover:text-base dark:text-white dark:hover:bg-gray-800"
-                  >
-                    PRODUCTS
-                  </Link>
-                  <Link
-                    to="/about"
-                    onClick={handleCloseMenu}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:font-bold hover:text-base dark:text-white dark:hover:bg-gray-800"
-                  >
-                    ABOUT
-                  </Link>
-                  <Link
-                    to="/contact"
-                    onClick={handleCloseMenu}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:font-bold hover:text-base dark:text-white dark:hover:bg-gray-800"
-                  >
-                    CONTACT
-                  </Link>
+                  <MobileNavLink name="home" closeMenu={handleCloseMenu} />
+                  <MobileNavLink name="products" closeMenu={handleCloseMenu} />
+                  <MobileNavLink name="about" closeMenu={handleCloseMenu} />
+                  <MobileNavLink name="contact" closeMenu={handleCloseMenu} />
                 </div>
                 <div className="py-6">
-                  <Link
-                    to="/"
-                    onClick={handleCloseMenu}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:font-bold hover:text-base dark:text-white dark:hover:bg-gray-800"
-                  >
-                    LOGIN
-                  </Link>
+                  <MobileNavLink name="login" closeMenu={handleCloseMenu} />
                 </div>
               </div>
             </div>

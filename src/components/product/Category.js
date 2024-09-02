@@ -8,6 +8,7 @@ const Category = () => {
   const dispatch = useDispatch();
   const products = useSelector((store) => store.product.products);
   const categories = ["all", "electronics", "jewelery", "men's clothing", "women's clothing"];
+
   const handleCategory = async (index, category) => {
     if (category !== "all") {
       const data = await fetch(GET_CATEGORY_API + category);
