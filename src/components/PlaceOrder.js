@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { generateShippingFee } from "../utils/helpers";
 import InputError from "./InputError";
 import toast, { Toaster } from "react-hot-toast";
-import { emptyCart } from "../utils/slices/cartSlice";
+import { emptyCart, setOrderPlaced } from "../utils/slices/cartSlice";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -43,6 +43,7 @@ const PlaceOrder = () => {
   const subTotal = useSelector((store) => store.cart.totalAmount);
   const shippingFee = generateShippingFee();
   const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -53,6 +54,7 @@ const PlaceOrder = () => {
   const onSubmit = async (data) => {
     /** simulating api call to server */
     await new Promise((resolve) => setTimeout(resolve, 1000));
+    dispatch(setOrderPlaced());
     navigate("/order-complete");
     reset();
     dispatch(emptyCart());
@@ -307,7 +309,7 @@ const PlaceOrder = () => {
 
           <div className="flex justify-end">
             <button
-              disabled={isSubmitting}
+              disabled={isSubmitting || subTotal === 0}
               type="submit"
               className="w-3/12 bg-black text-sm disabled:bg-gray-400 disabled:text-black disabled:font-bold text-white py-2 rounded-md  hover:border hover:border-black hover:font-bold dark:text-white dark:bg-gray-600  flex items-center justify-center"
             >
@@ -317,6 +319,11 @@ const PlaceOrder = () => {
               PLACE ORDER
             </button>
           </div>
+          {subTotal === 0 && (
+            <div className="flex justify-end mt-2">
+              <p className="text-xs font-bold text-red-500">Your cart is empty. Please select product first</p>
+            </div>
+          )}
         </div>
       </div>
     </form>

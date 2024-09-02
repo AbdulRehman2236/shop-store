@@ -1,8 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Navigate } from "react-router-dom";
+import { resetOrderPlace } from "../utils/slices/cartSlice";
 
 const OrderComplete = () => {
-  return (
+  const dispatch = useDispatch();
+  const cartItems = useSelector((store) => store.cart.cartItems);
+  const orderPlaced = useSelector((store) => store.cart.orderPlaced);
+
+  useEffect(() => {
+    return () => {
+      dispatch(resetOrderPlace());
+    };
+  }, []);
+
+  return cartItems && !orderPlaced ? (
+    <Navigate to="/" />
+  ) : (
     <section className="flex items-center h-full sm:p-16 dark:bg-gray-800 dark:text-gray-50">
       <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8 space-y-8 text-center sm:max-w-md">
         <svg

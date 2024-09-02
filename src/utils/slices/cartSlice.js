@@ -6,6 +6,7 @@ const cartSlice = createSlice({
     totalAmount: 0,
     cartCount: 0,
     cartItems: [],
+    orderPlaced: false,
   },
   reducers: {
     addItemToCart: (state, action) => {
@@ -35,8 +36,17 @@ const cartSlice = createSlice({
       state.totalAmount = 0;
       state.cartCount = 0;
     },
+
+    setOrderPlaced: (state) => {
+      state.orderPlaced = true;
+    },
+
+    resetOrderPlace: (state) => {
+      state.orderPlaced = false;
+    },
   },
 });
 
-export const { addItemToCart, removeItemFromCart, calculateTotalAmount, emptyCart } = cartSlice.actions;
+export const { addItemToCart, removeItemFromCart, calculateTotalAmount, emptyCart, setOrderPlaced, resetOrderPlace } =
+  cartSlice.actions;
 export default cartSlice.reducer;
