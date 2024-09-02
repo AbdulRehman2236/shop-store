@@ -6,6 +6,37 @@ import { generateShippingFee } from "../utils/helpers";
 import InputError from "./InputError";
 import toast, { Toaster } from "react-hot-toast";
 import { emptyCart } from "../utils/slices/cartSlice";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const orderSchema = z
+  .object({
+    firstName: z
+      .string()
+      .min(1, "First name is required")
+      .max(20, "First name should not be greater than 20 characters"),
+    lastName: z
+      .string()
+      .min(3, "Last name must be at least 3 characters")
+      .max(20, "Last name should not be greater than 20 characters"),
+    email: z.string().email(),
+    street: z.string().min(1, "Street is required").max(50, "Street should not be greater than 50 characters"),
+    city: z.string().min(1, "City is required").max(20, "City should not be greater than 20 characters"),
+    state: z.string().min(1, "State is required").max(20, "State should not be greater than 20 characters"),
+    zipCode: z
+      .number()
+      .gte(1000, "Last name must be at least 4 characters")
+      .lte(9999999, "Zip Code should not be greater than 7 characters"),
+    country: z.string().min(1, "Country is required").max(20, "Country should not be greater than 20 characters"),
+    phone: z
+      .string()
+      .min(9, "Phone must be at least 9 characters")
+      .max(15, "Phone should not be greater than 15 characters"),
+  })
+  .refine((data) => data.city !== data.country, {
+    message: "City and Country are same",
+    path: ["country"],
+  });
 
 const PlaceOrder = () => {
   const dispatch = useDispatch();
@@ -15,10 +46,9 @@ const PlaceOrder = () => {
   const {
     register,
     handleSubmit,
-    getValues,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm();
+  } = useForm({ resolver: zodResolver(orderSchema) });
 
   const onSubmit = async (data) => {
     /** simulating api call to server */
@@ -90,10 +120,7 @@ const PlaceOrder = () => {
                 type="text"
                 placeholder="First name"
                 className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-                {...register("firstName", {
-                  required: "First name is required",
-                  maxLength: { value: 20, message: "First name should not be greater than 20 characters" },
-                })}
+                {...register("firstName")}
               />
             </div>
 
@@ -103,11 +130,7 @@ const PlaceOrder = () => {
                 type="text"
                 placeholder="Last name"
                 className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-                {...register("lastName", {
-                  required: "Last name is required",
-                  minLength: { value: 3, message: "Last name must be at least 3 characters" },
-                  maxLength: { value: 20, message: "Last name should not be greater than 20 characters" },
-                })}
+                {...register("lastName")}
               />
             </div>
 
@@ -117,7 +140,7 @@ const PlaceOrder = () => {
                 type="email"
                 placeholder="Email address"
                 className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-                {...register("email", { required: "Email is required" })}
+                {...register("email")}
               />
             </div>
 
@@ -127,13 +150,7 @@ const PlaceOrder = () => {
                 type="text"
                 placeholder="Street"
                 className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-                {...register("street", {
-                  required: "Street is required",
-                  maxLength: {
-                    value: 50,
-                    message: "Street should not be greater than 50 characters",
-                  },
-                })}
+                {...register("street")}
               />
             </div>
 
@@ -143,10 +160,7 @@ const PlaceOrder = () => {
                 type="text"
                 placeholder="City"
                 className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-                {...register("city", {
-                  required: "City is required",
-                  maxLength: { value: 20, message: "City should not be greater than 20 characters" },
-                })}
+                {...register("city")}
               />
             </div>
 
@@ -156,10 +170,7 @@ const PlaceOrder = () => {
                 type="text"
                 placeholder="State"
                 className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-                {...register("state", {
-                  required: "State is required",
-                  maxLength: { value: 20, message: "State should not be greater than 20 characters" },
-                })}
+                {...register("state")}
               />
             </div>
 
@@ -169,10 +180,7 @@ const PlaceOrder = () => {
                 type="number"
                 placeholder="Zip Code"
                 className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-                {...register("zipCode", {
-                  required: "Zip Code is required",
-                  maxLength: { value: 20, message: "Zip Code should not be greater than 20 characters" },
-                })}
+                {...register("zipCode", { valueAsNumber: true })}
               />
             </div>
 
@@ -182,25 +190,17 @@ const PlaceOrder = () => {
                 type="text"
                 placeholder="Country"
                 className="border p-2 rounded w-full dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-                {...register("country", {
-                  required: "Country is required",
-                  maxLength: { value: 20, message: "Country should not be greater than 20 characters" },
-                  validate: (value) => value !== getValues("city") || "City and Country are same",
-                })}
+                {...register("country")}
               />
             </div>
 
             <div className="col-span-2">
               {errors && <InputError fieldName={errors.phone} errorMessage={errors?.phone?.message} />}
               <input
-                type="number"
+                type="text"
                 placeholder="Phone"
                 className="border p-2 rounded w-full col-span-2 dark:bg-gray-300 dark:border-gray-700 dark:placeholder-gray-700 font-semibold"
-                {...register("phone", {
-                  required: "Phone is required",
-                  minLength: { value: 9, message: "Phone must be at least 9 characters" },
-                  maxLength: { value: 15, message: "Phone should not be greater than 15 characters" },
-                })}
+                {...register("phone")}
               />
             </div>
           </div>
