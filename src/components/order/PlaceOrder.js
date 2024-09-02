@@ -1,18 +1,17 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { generateShippingFee } from "../../utils/helpers";
-import { emptyCart, setOrderPlaced } from "../../utils/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { orderSchema } from "../../utils/schemas/orderSchema";
 import OrderForm from "./OrderForm";
+import CartTotal from "./CartTotal";
 import PaymentMethods from "./PaymentMethods";
+import { orderSchema } from "../../utils/schemas/orderSchema";
+import { emptyCart, setOrderPlaced } from "../../utils/slices/cartSlice";
 
 const PlaceOrder = () => {
   const dispatch = useDispatch();
   const subTotal = useSelector((store) => store.cart.totalAmount);
-  const shippingFee = generateShippingFee();
   const navigate = useNavigate();
 
   const {
@@ -41,30 +40,8 @@ const PlaceOrder = () => {
           <OrderForm register={register} errors={errors} />
         </div>
 
-        {/* Cart Totals & Payment Method */}
         <div className="lg:mt-20">
-          <div className="mb-6">
-            <h2 className="text-xl font-semibold mb-5 text-gray-700 dark:text-gray-50">
-              CART <span className="font-bold text-gray-800 dark:text-gray-200">TOTALS</span>
-            </h2>
-            <div className="space-y-2 text-sm">
-              <div className="flex justify-between dark:text-white">
-                <span>Subtotal</span>
-                <span>${subTotal}</span>
-              </div>
-              <hr />
-              <div className="flex justify-between dark:text-white">
-                <span>Shipping Fee</span>
-                <span>${shippingFee}</span>
-              </div>
-              <hr />
-              <div className="flex justify-between font-bold space-y-1 dark:text-white">
-                <span>Total</span>
-                <span>${subTotal + shippingFee}</span>
-              </div>
-            </div>
-          </div>
-
+          <CartTotal subTotal={subTotal} />
           <PaymentMethods />
 
           <div className="flex justify-end">
