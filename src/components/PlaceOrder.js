@@ -1,12 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { generateShippingFee } from "../utils/helpers";
 import InputError from "./InputError";
 import toast, { Toaster } from "react-hot-toast";
+import { emptyCart } from "../utils/slices/cartSlice";
 
 const PlaceOrder = () => {
+  const dispatch = useDispatch();
   const subTotal = useSelector((store) => store.cart.totalAmount);
   const shippingFee = generateShippingFee();
   const navigate = useNavigate();
@@ -23,6 +25,7 @@ const PlaceOrder = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     navigate("/order-complete");
     reset();
+    dispatch(emptyCart());
   };
 
   const toastError = (m) =>
