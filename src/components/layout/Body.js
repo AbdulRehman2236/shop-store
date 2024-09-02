@@ -9,8 +9,8 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Error from "../pages/Error";
 import OnlineStatus from "../shared/OnlineStatus";
-import PlaceOrder from "../cart/PlaceOrder";
-import OrderComplete from "../cart/OrderComplete";
+import PlaceOrder from "../order/PlaceOrder";
+import OrderComplete from "../order/OrderComplete";
 import Cart from "../cart/Cart";
 import BodyContainer from "./BodyContainer";
 
