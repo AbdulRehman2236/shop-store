@@ -56,16 +56,20 @@ Ensure you have Node.js and npm installed on your machine.
 
    ```bash
    git clone https://github.com/AbdulRehman2236/shop-store.git
-   cd shop-store
    ```
 
-2. Install dependencies:
+2. Navigate to project directory:
+
+   ```
+   cd shop-store
+   ```
+3. Install dependencies:
 
    ```bash
    npm install
    ```
 
-3. Start the development server:
+4. Start the development server:
    ```bash
    npm run start
    ```
@@ -79,6 +83,25 @@ To create an optimized production build:
 npm run build
 
 ```
+
+### Project Structure
+
+The project follows a maintainable and scalable structure:
+
+- `public/index.html` : Main HTML file that serves the application.
+- `src/components` : Reusable UI components.
+- `src/utils` : Utility functions and shared resources.
+  - `src/utils/hooks` : Custom hooks for data fetching and logic
+  - `src/utils/schemas` : Form validation schemas.
+  - `src/utils/slices` : Redux slices for state management.
+  - `src/utils/appStore.js` : Redux store configuration.
+  - `src/utils/constants.js` : Constants used across the application.
+  - `src/utils/helper.js` : Helper functions and utilities.
+- `src/App.js` : Main App component.
+- `src/index.js`: Entry point for React, rendering the app.
+- `src/index.css`: Global CSS styles.
+- `tailwind.config.js` : Tailwind CSS configuration.
+- `package.json` : Project dependencies and scripts.
 
 ### Available Scripts
 
