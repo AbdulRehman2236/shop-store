@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { MobileNavLink, NavLink } from "./NavLinks";
 import Theme from "./Theme";
+import CartIcon from "./CartIcon";
 import SearchIcon from "./SearchIcon";
+import { MobileNavLink, NavLink } from "./NavLinks";
 
 const Header = () => {
-  const cartCount = useSelector((store) => store.cart.cartCount);
   const [isMenuClose, setIsMenuClose] = useState(true);
 
   const handleCloseMenu = () => {
@@ -25,17 +24,9 @@ const Header = () => {
           <div className="flex md:hidden">
             <div className="flex flex-1 justify-end">
               <SearchIcon />
-
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6 ">
-                <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
-              </svg>
-              <Link
-                to="/cart"
-                className="text-sm font-semibold leading-6 text-gray-900 mx-1 mr-6 hover:font-bold hover:text-base dark:text-white"
-              >
-                CART <span aria-hidden="true">({cartCount})</span>
-              </Link>
+              <CartIcon />
             </div>
+
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-50"
@@ -64,18 +55,9 @@ const Header = () => {
 
           <div className="hidden md:flex md:flex-1 md:justify-end">
             <SearchIcon />
-
             <Theme iconPosition="mr-3" />
+            <CartIcon />
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-              <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
-            </svg>
-            <Link
-              to="/cart"
-              className="text-sm font-semibold leading-6 text-gray-900 mx-1 mr-6 hover:font-bold hover:text-base dark:text-white"
-            >
-              CART <span aria-hidden="true">({cartCount})</span>
-            </Link>
             <button className="text-sm font-semibold leading-6 text-gray-900 hover:font-bold hover:text-base dark:text-white">
               LOGIN <span aria-hidden="true">&rarr;</span>
             </button>
