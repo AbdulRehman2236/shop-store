@@ -13,7 +13,7 @@ const Products = () => {
   const filteredProducts = useSelector((store) => store.product.sortedProducts);
 
   return (
-    <div className="px-16 sm:px-4">
+    <div className="px-16 sm:px-4 min-h-[100vh]">
       {showSearch && <Search />}
       <div className="flex flex-col sm:mt-10 sm:flex sm:relative items-center mt-3">
         <h1 className="font-bold text-2xl mt-6 mb-8 sm:mb-0 sm:mt-0 dark:text-white">LATEST COLLECTIONS</h1>

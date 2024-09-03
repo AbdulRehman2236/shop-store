@@ -3,8 +3,8 @@ import { ABOUT_IMG } from "../../utils/constants";
 
 const About = () => {
   return (
-    <section className="h-full min-h-[90vh] flex-col items-center justify-center dark:text-white dark:bg-gray-800">
-      <h1 className="font-bold text-center pt-8 text-2xl mb-8 sm:mb-0 sm:mt-0">ABOUT US</h1>
+    <section className="h-full min-h-[70vh] flex-col flex items-center justify-center dark:text-white dark:bg-gray-800">
+      <h1 className="font-bold text-center pt-8 text-2xl mb-8 sm:mb-2 sm:mt-0">ABOUT US</h1>
 
       <div className="container max-w-6xl sm:p-6 mx-auto space-y-6 sm:space-y-12">
         <div

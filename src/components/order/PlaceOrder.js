@@ -31,7 +31,10 @@ const PlaceOrder = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="container mx-auto px-8 sm:px-4 py-8 dark:bg-gray-800">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="container min-h-[67vh] mx-auto px-8 sm:px-4 py-8 dark:bg-gray-800"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="lg:mt-4 lg:px-4 lg:mr-10">
           <h2 className="text-2xl font-normal mb-4 md:mb-12 text-gray-700 dark:text-gray-50">
