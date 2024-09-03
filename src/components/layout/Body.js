@@ -1,13 +1,13 @@
 import React from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Header from "./Header";
+import Header from "./Header/Header";
 import Footer from "./Footer";
 import Cart from "../cart/Cart";
 import Error from "../pages/Error";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Products from "../product/Products";
-import HeaderSection from "./HeaderSection";
+import HeaderSection from "./Header/HeaderSection";
 import BodyContainer from "./BodyContainer";
 import PlaceOrder from "../order/PlaceOrder";
 import ProductDetails from "../product/ProductDetails";

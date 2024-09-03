@@ -1,18 +1,13 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { showSearch } from "../../utils/slices/searchSlice";
 import { MobileNavLink, NavLink } from "./NavLinks";
 import Theme from "./Theme";
+import SearchIcon from "./SearchIcon";
 
 const Header = () => {
-  const dispatch = useDispatch();
   const cartCount = useSelector((store) => store.cart.cartCount);
   const [isMenuClose, setIsMenuClose] = useState(true);
-
-  const handleSearch = () => {
-    dispatch(showSearch());
-  };
 
   const handleCloseMenu = () => {
     setIsMenuClose(true);
@@ -29,21 +24,8 @@ const Header = () => {
           </div>
           <div className="flex md:hidden">
             <div className="flex flex-1 justify-end">
-              <Link to="/products">
-                <svg
-                  className=" size-6 font-semibold leading-6 text-gray-900 mx-1 mr-6 hover:size-5 dark:text-white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  onClick={handleSearch}
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </Link>
+              <SearchIcon />
+
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6 ">
                 <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
               </svg>
@@ -81,21 +63,7 @@ const Header = () => {
           </div>
 
           <div className="hidden md:flex md:flex-1 md:justify-end">
-            <Link to="/products">
-              <svg
-                className=" size-6 font-semibold leading-6 text-gray-900 mx-1 mr-3 hover:size-5 dark:text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                onClick={handleSearch}
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link>
+            <SearchIcon />
 
             <Theme iconPosition="mr-3" />
 
