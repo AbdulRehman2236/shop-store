@@ -8,7 +8,7 @@ const OnlineStatus = () => {
   return (
     <>
       {!onlineStatus && (
-        <div className="flex justify-center items-center flex-row pl-4 py-1 gap-2 border shadow overflow-hidden dark:bg-gray-800 ">
+        <div className="flex justify-center items-center flex-row pl-4 py-1 gap-2 border shadow overflow-hidden dark:bg-gray-800 dark:border-gray-800">
           <span className="flex mx-3 item-center justify-center leading-none rounded-full dark:bg-red-600 dark:text-gray-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
