@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Theme = ({ darkTheme, handleDarkMode, iconPosition }) => {
+const Theme = ({ iconPosition }) => {
+  const [dark, setDark] = useState(false);
+
+  const handleDarkMode = () => {
+    setDark(!dark);
+    document.body.classList.toggle("dark");
+  };
+
   return (
     <>
-      {darkTheme ? (
+      {dark ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
