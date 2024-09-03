@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# React Shop Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is kind of E-commerce front-end web application built with modern technologies like React, Tailwind CSS, and Webpack. It integrates with Fake Store APIs to provide a dynamic shopping experience. The application is responsive, features light and dark modes, and includes essential functionalities like product searching. sorting, filtering, cart management, and more.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- **React JS:** - A powerful JavaScript library for building user interfaces.
+- **Tailwind CSS:** - Utility-first CSS framework for styling and responsiveness.
+- **Webpack :** - Bundler to optimize and compile code.
+- **Redux Toolkit:** - Efficient state management for global application states.
+- **React Router DOM:** - For managing routes within the application.
+- **React Hook Form with Zod:** - For form validation and handling form submissions.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Product Listing & Search
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Integration with Fake Store APIs**: Fetch and display products.
+- **Sorting by Price**: Users can sort products from low to high and high to low prices.
+- **Filtering by Categories**: Dynamic category filtering using API data.
+- **Quick Search**: Real-time keyword search with instant product filtering.
 
-### `npm test`
+### Cart Management
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Add to Cart**: Easily add items to the cart and update the quantity from the cart page.
+- **Cart State Reset**: Cart state resets after a dummy order is placed.
+- **Toast Notifications**: Display error messages for disabled payment methods.
 
-### `npm run build`
+### Order Placement
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Dummy Order**: Simulated order placement with cart reset after completion.
+- **Route Protection**: Prevent access order complete page if order is not placed yet.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### User Experience
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Shimmer UI**: Loading skeleton for a smoother user experience while data is being fetched.
+- **Responsive Design**: Ensures optimal viewing on various devices, including mobile and desktop.
 
-### `npm run eject`
+### Themes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Dark and Light Mode**: Users can toggle between dark and light themes for an enhanced browsing experience.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Offline Handling
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Gracefully handles offline status by notifying users and maintaining data integrity when reconnected.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Getting Started
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ensure you have Node.js and npm installed on your machine.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
 
-### Code Splitting
+1. Clone the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   git clone https://github.com/AbdulRehman2236/shop-store.git
+   cd shop-store
+   ```
 
-### Analyzing the Bundle Size
+2. Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   npm install
+   ```
 
-### Making a Progressive Web App
+3. Start the development server:
+   ```bash
+   npm run start
+   ```
+   Visit the app at [http://localhost:3000](http://localhost:3000).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Build for Production
 
-### Advanced Configuration
+To create an optimized production build:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm run build
 
-### Deployment
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Available Scripts
 
-### `npm run build` fails to minify
+- `npm run start`: Starts the development server.
+- `npm run build`: Builds the app for production.
+- `npm run lint`: Runs the linter to check code quality.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any feature requests or bugs.
+
+## Contact Information
+
+- Email: abdulrehmanfayyaz3083@gmail.com
+- LinkedIn: https://www.linkedin.com/in/abdul-rehman-fayyaz/
+
+Feel free to reach out to me if you have any questions or feedback about my project. I'm always happy to help!
