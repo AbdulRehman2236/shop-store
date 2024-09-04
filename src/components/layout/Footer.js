@@ -50,7 +50,7 @@ export const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#" className="hover:text-violet-400">
+                  <a rel="noopener noreferrer" href="#" className="hover:text-violet-400 break-words sm:break-keep">
                     abdulrehmanfayyaz3083@gmail.com
                   </a>
                 </li>
