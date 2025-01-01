@@ -55,7 +55,7 @@ const Header = () => {
 
           <div className="hidden md:flex md:flex-1 md:justify-end">
             <SearchIcon />
-            <Theme iconPosition="mr-3" />
+            <Theme iconPosition="ml-5" />
             <CartIcon />
 
             <button className="text-sm font-semibold leading-6 text-gray-900 hover:font-bold hover:text-base dark:text-white">
@@ -71,7 +71,7 @@ const Header = () => {
                 <Link to="/" onClick={handleCloseMenu} className="-m-1.5 p-1.5">
                   <h1 className="font-bold text-xl hover:font-bold hover:text-2xl">COLLECTION</h1>
                 </Link>
-                <Theme iconPosition="ml-3" />
+                <Theme iconPosition="mr-2" />
               </div>
               <button
                 type="button"

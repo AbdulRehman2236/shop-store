@@ -19,16 +19,16 @@ export const GET_LATEST_PRODUCTS_API = "https://fakestoreapi.com/products?limit=
 
 export const SORTING_TYPES = [
   {
-    identifier: "relative",
-    name: "Sort by: Relevant",
+    identifier: "RELATIVE",
+    name: "order by: relevant",
   },
 
   {
-    identifier: "low-to-high",
-    name: "Sort by: Low to High",
+    identifier: "LOW-TO-HIGH",
+    name: "order by: loW To high",
   },
   {
-    identifier: "high-to-low",
-    name: "Sort by: High to Low",
+    identifier: "HIGH-TO-LOW",
+    name: "order by: high To low",
   },
 ];

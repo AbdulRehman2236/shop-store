@@ -4,7 +4,7 @@ export const NavLink = ({ name }) => {
   return (
     <div className="relative">
       <Link
-        className="flex items-center gap-x-1 text-sm font-semibold uppercase leading-6 text-gray-900 hover:font-bold hover:text-base dark:text-white"
+        className="flex items-center gap-x-1 text-sm font-bold lowercase leading-6 text-gray-900 hover:font-bold hover:text-base dark:text-white"
         to={name === "home" ? "/" : "/" + name}
       >
         {name}
