@@ -18,7 +18,7 @@ const EmptyCart = () => {
         </p>
         <Link
           rel="noopener noreferrer"
-          to="/products"
+          to="/product"
           className="px-8 py-3 font-semibold rounded bg-black text-white hover:bg-white hover:text-black hover:border border-black dark:bg-gray-100 dark:text-black dark:hover:bg-gray-500 dark:hover:text-gray-50"
         >
           Back to products

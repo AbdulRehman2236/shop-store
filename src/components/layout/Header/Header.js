@@ -48,7 +48,7 @@ const Header = () => {
 
           <div className="hidden md:flex md:gap-x-10 lg:flex lg:gap-x-12">
             <NavLink name="home" />
-            <NavLink name="products" />
+            <NavLink name="product" />
             <NavLink name="about" />
             <NavLink name="contact" />
           </div>

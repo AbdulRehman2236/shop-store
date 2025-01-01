@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ id, name, price, img }) => {
   return (
     <div className="m-4 max-w-xs p-4 rounded-md shadow-lg  bg-gray-50 border border-gray-100 text-gray-900 hover:text-sm dark:bg-gray-100 dark:rounded-sm">
-      <Link to={"/products/" + id}>
+      <Link to={"/product/" + id}>
         <div className="flex justify-center">
           <img
             src={img}

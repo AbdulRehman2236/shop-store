@@ -11,7 +11,7 @@ const SearchIcon = () => {
   };
 
   return (
-    <Link to="/products">
+    <Link to="/product">
       <svg
         className=" size-6 font-semibold leading-6 text-gray-900 mx-1 mr-3 hover:size-5 dark:text-white"
         xmlns="http://www.w3.org/2000/svg"

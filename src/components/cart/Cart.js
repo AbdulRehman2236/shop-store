@@ -30,7 +30,7 @@ const Cart = () => {
           </div>
           <div className="flex justify-end space-x-4 mr-3">
             <Link
-              to="/products"
+              to="/product"
               type="button"
               className="px-6 py-2 text-black font-semibold rounded-md border border-black hover:font-bold hover:bg-black hover:text-white dark:text-white dark:bg-gray-600 dark:hover:bg-white dark:hover:text-gray-900"
             >
